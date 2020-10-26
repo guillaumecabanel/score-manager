@@ -9,3 +9,13 @@ Championship.create!(
   start_at: Date.new(2020, 12, 21).beginning_of_day,
   end_at:   Date.new(2021, 3, 21).end_of_day
 )
+
+Game.create(
+  title: 'Rami',
+  icon: 'spade'
+)
+
+Game.create(
+  title: 'Yams',
+  icon: 'dice'
+)

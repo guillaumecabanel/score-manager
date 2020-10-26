@@ -1,0 +1,14 @@
+= render HeaderComponent.new(icon: 'chess') do
+  = t('.title')
+
+.my-4
+  ul.px-4
+    - @games.each do |game|
+      = render ListItemComponent.new do |component|
+        - component.with(:title) do
+          = game.title
+        - component.with(:aside) do
+          i.fad class=('fa-' + game.icon)
+
+  = render CallToActionComponent.new(url: new_game_path) do
+    = t('.new')

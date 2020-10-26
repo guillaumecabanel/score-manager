@@ -8,3 +8,12 @@ en:
     show:
       title: Championships
       new_match: New match
+  matches:
+    new:
+      title: New match
+  games:
+    index:
+      title: Games
+      new: Add a game
+    new:
+      title: Add a game

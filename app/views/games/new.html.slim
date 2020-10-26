@@ -1,0 +1,22 @@
+= render HeaderComponent.new(icon: 'trophy-alt') do
+  = t('.title')
+
+.form-wrapper.px-4.py-2.mx-4.my-4.bg-white.shadow
+  = form_with model: @game do |form|
+    = form.container_for :title, class: 'field' do
+      = form.label :title
+      = form.text_field :title
+      = form.error_for :title, class: 'mt-1 text-red-600 text-sm font-semibold'
+
+    = form.container_for :icon, class: 'field' do
+      = form.label :icon
+      .flex
+        - %w[dice spade gamepad game-board].each do |icon|
+          = form.radio_button(:icon, icon)
+          = form.label "icon_#{icon}".to_sym, class: 'mr-2 border p-2 cursor-pointer' do
+            i.fad.text-xl class=('fa-' + icon)
+
+      = form.error_for :icon, class: 'mt-1 text-red-600 text-sm font-semibold'
+
+    .w-full
+      = form.submit class: 'cta my-4 cursor-pointer w-full'
