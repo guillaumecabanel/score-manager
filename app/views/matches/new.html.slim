@@ -1,0 +1,17 @@
+= render HeaderComponent.new(icon: 'swords') do
+  = t('.title')
+
+.form-wrapper.px-4.py-2.mx-4.my-4.bg-white.shadow
+  = form_with model: [@championship, @match] do |form|
+    = form.label :game
+    = form.container_for :game_id, class: 'field' do
+      .flex
+        -@games.each do |game|
+          = form.radio_button(:game_id, game.id)
+          = form.label "game_id_#{game.id}".to_sym, class: 'mr-2 border p-2 cursor-pointer' do
+            .text-xl
+              i.fad.mr-2 class=('fa-' + game.icon)
+              span = game.title
+      = form.error_for :game_id, class: 'mt-1 text-red-600 text-sm font-semibold'
+    .w-full
+      = form.submit class: 'cta my-4 cursor-pointer w-full'
