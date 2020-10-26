@@ -1,0 +1,21 @@
+.bg-white.py-2.px-8.fixed.w-screen.bottom-0
+  ul.flex.items-center.justify-between.h-12
+    = render MenuItemComponent.new(url: championships_path,
+                                   active: params[:controller] == 'championships',
+                                   icon: 'trophy-alt') do
+      | Championships
+
+    = render MenuItemComponent.new(url: games_path,
+                                   active: params[:controller] == 'games',
+                                   icon: 'chess') do
+      | Games
+
+    = render MenuItemComponent.new(url: '',
+                                   active: params[:controller] == '',
+                                   icon: 'user-friends') do
+      | Friends
+
+    = render MenuItemComponent.new(url: '',
+                                   active: params[:controller] == '',
+                                   icon: 'cog') do
+      | Settings

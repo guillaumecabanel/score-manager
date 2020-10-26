@@ -1,0 +1,19 @@
+doctype html
+html
+  head
+    meta charset="UTF-8"
+    meta name="viewport" content="width=device-width, initial-scale=1.0"
+
+    title ScoreManager
+    = csrf_meta_tags
+    = csp_meta_tag
+
+    script src=(ENV['FONTAWESOME_CDN']) crossorigin="anonymous"
+
+    = stylesheet_link_tag 'application', media: 'all', 'data-turbolinks-track': 'reload'
+    = javascript_pack_tag 'application', 'data-turbolinks-track': 'reload'
+    = stylesheet_pack_tag 'stylesheets', media: 'all', 'data-turbolinks-track': 'reload'
+
+  body.bg-gray-200.h-screen
+    == yield
+    = render MenuComponent.new

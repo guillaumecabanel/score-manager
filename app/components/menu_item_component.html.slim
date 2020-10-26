@@ -1,0 +1,5 @@
+li class=(@active ? 'text-gray-800' : 'text-gray-600') class="hover:text-gray-700"
+  = link_to @url do
+    .text-center
+      i.fad.text-xl class=('fa-' + @icon)
+      .text-sm = content
