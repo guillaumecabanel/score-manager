@@ -1,0 +1,10 @@
+en:
+  championships:
+    index:
+      title: Championships
+      new: Add a championship
+    new:
+      title: Add a championship
+    show:
+      title: Championships
+      new_match: New match

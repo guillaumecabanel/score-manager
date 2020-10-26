@@ -1,0 +1,13 @@
+= render HeaderComponent.new(icon: 'trophy-alt') do
+  = t('.title')
+
+.my-4
+  ul.px-4
+    - @championships.each do |championship|
+      = link_to championship_path(championship) do
+        = render ListItemComponent.new do |component|
+          - component.with(:title) do
+            = championship.title
+
+  = render CallToActionComponent.new(url: new_championship_path) do
+    = t('.new')

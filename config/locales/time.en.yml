@@ -1,0 +1,4 @@
+en:
+  time:
+    formats:
+      medium: "%d %b %Y"

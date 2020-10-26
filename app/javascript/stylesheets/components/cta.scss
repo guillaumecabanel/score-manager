@@ -1,0 +1,9 @@
+.cta {
+  @apply px-4 py-2 block rounded;
+  @apply bg-indigo-800;
+  @apply text-white text-lg font-semibold text-center;
+
+  &:hover {
+    @apply bg-indigo-700;
+  }
+}
